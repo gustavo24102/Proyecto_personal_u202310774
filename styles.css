@@ -1,0 +1,386 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- HEADER Y MENU DE NAVEGACIÓN --- */
+
+.top-header {
+  position: fixed;
+  background-color: #69b013;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+/* Estilos del menú en Escritorio */
+
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.menu-horizontal > li {
+  position: relative;
+  padding: 0 15px;
+}
+
+.menu-horizontal li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.menu-horizontal li a:hover {
+  color: #d1ffb3;
+}
+
+/* SUBMENU */
+
+.menu-vertical {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block;
+}
+
+.menu-vertical li {
+  display: block;
+
+  padding: 10px 20px;
+}
+
+.menu-vertical li a {
+  color: #69b013;
+
+  font-size: 14px;
+}
+
+.menu-vertical li:hover {
+  background-color: #f0f0f0;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  color: white;
+}
+
+.seccion-productos {
+  padding: 120px 20px 60px;
+  background-color: #fff;
+}
+
+.cont-gral-productos,
+.cont-gral-beneficios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.cont-prod-texto,
+.cont-benef-texto {
+  flex: 1;
+}
+
+h2 {
+  color: #69b013;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.cont-prod-imagen,
+.cont-benef-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Importante: Imagen responsive */
+
+.cont-prod-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.seccion-beneficios {
+  background-color: #f9fdf5;
+  padding: 60px 20px;
+}
+
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- FORMULARIOS --- */
+
+.seccion-autenticacion {
+  background-color: #69b013;
+
+  padding: 60px 20px;
+}
+
+.contenedor-auth {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.auth-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.campo {
+  background-color: #f0f8e9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.campo label {
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.lista-checkbox,
+.lista-radio {
+  padding-left: 0;
+  list-style: none;
+}
+
+.lista-checkbox li,
+.lista-radio li {
+  margin-bottom: 8px;
+}
+
+/* --- FOOTER --- */
+
+.main-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px 20px;
+  border-top: 5px solid #69b013;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section h4 {
+  border-bottom: 2px solid #69b013;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.nav-legal a {
+  display: block;
+  color: #b3b3b3;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link img {
+  width: 40px;
+  filter: grayscale(100%);
+}
+
+.social-link:hover img {
+  filter: grayscale(0%);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .top-header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* El menú se oculta y se vuelve vertical */
+
+  .menu-horizontal {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #69b013;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-horizontal > li {
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  #menu-toggle:checked ~ .menu-horizontal {
+    display: flex;
+  }
+
+  /* Submenú en móvil */
+
+  .menu-vertical {
+    position: relative;
+    box-shadow: none;
+    background-color: #55910e;
+    width: 100%;
+  }
+
+  .menu-vertical li a {
+    color: white;
+  }
+
+  / .cont-gral-productos,
+  .cont-gral-beneficios {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cont-prod-imagen,
+  .cont-benef-video {
+    width: 100%;
+  }
+
+  .seccion-productos {
+    padding-top: 100px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* 3. Formularios */
+
+  .contenedor-auth {
+    flex-direction: column;
+  }
+
+  .auth-card {
+    min-width: 100%;
+    padding: 20px;
+  }
+}
